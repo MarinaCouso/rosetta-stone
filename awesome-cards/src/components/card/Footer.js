@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../images/logo-adalab.png';
+import logo from '../../images/logo-adalab.png';
 function Footer() {
   return (
     <footer className='footer'>
@@ -7,7 +7,7 @@ function Footer() {
       <small className='footer__copy'>Awesome profile-cards © 2020</small>
       <div className='footer__logo'>
         <a href='https://adalab.es/' title='Ir a Adalab' target='_blank'>
-          <img src='../../images/logo-adalab.png' alt='Adalab' />
+          <img src={logo} alt='Adalab' />
         </a>
       </div>
     </footer>
