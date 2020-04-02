@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './stylesheets/App.scss';
 import App from './components/App';
+import Footer from './components/card/Footer';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
