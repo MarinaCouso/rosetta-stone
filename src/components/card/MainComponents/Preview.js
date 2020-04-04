@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './Form';
 import Header from '../Header';
 import userImage from '../../../images/sample.jpg';
+import Palettes from './Palettes';
 function Preview() {
   return (
     <div>
@@ -46,6 +47,7 @@ function Preview() {
             </nav>
           </div>
         </div>
+        <Palettes />
         <Form />
         {/* <partial src="_section-design.html"></partial> */}
       </main>
