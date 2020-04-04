@@ -3,6 +3,7 @@ import Form from './Form';
 import Header from '../Header';
 import userImage from '../../../images/sample.jpg';
 import Palettes from './Palettes';
+import Share from './Share';
 function Preview() {
   return (
     <div>
@@ -49,6 +50,7 @@ function Preview() {
         </div>
         <Palettes />
         <Form />
+        <Share />
         {/* <partial src="_section-design.html"></partial> */}
       </main>
     </div>

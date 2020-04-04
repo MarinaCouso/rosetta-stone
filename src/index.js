@@ -4,9 +4,8 @@ import './stylesheets/App.scss';
 import App from './components/App';
 import Footer from './components/card/Footer';
 import * as serviceWorker from './serviceWorker';
-import Header from './components/card/Header';
 import Preview from './components/card/MainComponents/Preview';
-// import Share from './components/card/MainComponents/Share';
+
 ReactDOM.render(
   <React.StrictMode>
     <Preview />
