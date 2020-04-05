@@ -1,13 +1,19 @@
 import React from 'react';
 
-function PaletteComponent() {
+function PaletteComponent(props) {
   return (
-    <label htmlFor="colors" className="@@aClass">
-      <input type="radio" id="colors" name="colors" className="js-radio" value="" />
-      <ul className="@@classList">
-        <li className="list--color"></li>
-        <li className="list--color"></li>
-        <li className="list--color"></li>
+    <label htmlFor='colors' className={props.aClass}>
+      <input
+        type='radio'
+        id='colors'
+        name='colors'
+        className='js-radio'
+        value=''
+      />
+      <ul className={props.classList}>
+        <li className='list--color'></li>
+        <li className='list--color'></li>
+        <li className='list--color'></li>
       </ul>
     </label>
   );
