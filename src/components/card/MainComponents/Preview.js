@@ -84,10 +84,12 @@ class Preview extends React.Component {
               </nav>
             </div>
           </div>
-          <Palettes />
-          <Form />
-          <Share />
-          {/* <partial src="_section-design.html"></partial> */}
+          <section class='section-page'>
+            <Palettes />
+            <Form />
+            <Share />
+            {/* <partial src="_section-design.html"></partial> */}
+          </section>
         </main>
       </div>
     );

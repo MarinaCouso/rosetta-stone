@@ -6,8 +6,8 @@ class Palettes extends React.Component {
   render() {
     return (
       <div class='section-page__design'>
+        <Title icon='far fa-object-ungroup' title='Diseña' />
         <div className='section-page__design__colors collapsable-content'>
-          <Title icon='far fa-object-ungroup' title='Diseña' />
           <h3 className='section-page__design__colors__subtitle'>colores</h3>
           <form
             action=''
