@@ -1,13 +1,13 @@
 import React from 'react';
 import '../stylesheets/App.scss';
 import Landing from './Landing';
-import Card from './Card';
+import Preview from './card/MainComponents/Preview';
 
 function App() {
   return (
     <div>
-      <Landing />
-      <Card />
+      {/* <Landing /> */}
+      <Preview />
     </div>
   );
 }
