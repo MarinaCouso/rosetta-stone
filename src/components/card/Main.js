@@ -1,12 +1,11 @@
 import React from 'react';
+import Main from './card/Main';
 import Preview from './MainComponents/Preview';
-import Form from './MainComponents/Form';
 
 function Main() {
   return (
     <div>
       <Preview />
-      <Form />
     </div>
   );
 }
