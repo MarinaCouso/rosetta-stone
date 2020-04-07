@@ -4,12 +4,13 @@ import Header from '../Header';
 import Palettes from './Palettes';
 import Share from './Share';
 import PreviewCard from './PreviewCard';
+import Footer from '../Footer';
 
 class Preview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette: '1'
+      palette: '1',
     };
     this.handlePaletteInPreview = this.handlePaletteInPreview.bind(this);
   }
@@ -18,7 +19,7 @@ class Preview extends React.Component {
     // console.log('Yo soy handlePaletteInPreview');
     // console.log(data.value);
     this.setState({
-      palette: data.value
+      palette: data.value,
     });
   }
 
@@ -27,9 +28,9 @@ class Preview extends React.Component {
     return (
       <div>
         <Header />
-        <main className="section-profile">
+        <main className='section-profile'>
           <PreviewCard palette={this.state.palette} />
-          <section class="section-page">
+          <section class='section-page'>
             <Palettes
               palette={this.state.palette}
               handlePaletteInPreview={this.handlePaletteInPreview}
@@ -39,6 +40,7 @@ class Preview extends React.Component {
             {/* <partial src="_section-design.html"></partial> */}
           </section>
         </main>
+        <Footer />
       </div>
     );
   }
