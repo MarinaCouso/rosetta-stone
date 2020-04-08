@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Title extends React.Component {
+class SectionTitle extends React.Component {
   render() {
     return (
       <header className='section-page__header collapsable-header'>
@@ -19,4 +19,4 @@ class Title extends React.Component {
   }
 }
 
-export default Title;
+export default SectionTitle;

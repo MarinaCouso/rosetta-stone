@@ -1,6 +1,6 @@
 import React from 'react';
 import ShareTwitter from './ShareTwitter';
-import Title from './Title';
+import SectionTitle from './SectionTitle';
 
 class Share extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Share extends React.Component {
     return (
       <div>
         <div className='section-page__share'>
-          <Title icon='fas fa-share-alt' title='Comparte' />
+          <SectionTitle icon='fas fa-share-alt' title='Comparte' />
           {/* <div className="section-page__share collapsable-close"> */}
           <partial
             src='_header-design.html'
