@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from './Title';
+import SectionTitle from './SectionTitle';
 import FormInput from './FormInput';
 
 // handleInputData = () => {
@@ -11,7 +11,7 @@ import FormInput from './FormInput';
 function Form() {
   return (
     <div className='section-page__fill  {/*  collapsable-close*/}'>
-      <Title icon='far fa-keyboard' title='Rellena' />
+      <SectionTitle icon='far fa-keyboard' title='Rellena' />
       <form
         action=''
         method='GET'
