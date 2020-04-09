@@ -10,7 +10,7 @@ import FormInput from './FormInput';
 
 function Form() {
   return (
-    <div className='section-page__fill  {/*  collapsable-close*/}'>
+    <div className='section-page__fill collapsable-close'>
       <SectionTitle icon='far fa-keyboard' title='Rellena' />
       <form
         action=''
