@@ -5,24 +5,27 @@ class Image extends React.Component {
     super(props);
     this.handleImage = this.handleImage.bind(this);
     this.writeImage = this.writeImage.bind(this);
+    this.fakeFileClick = this.fakeFileClick.bind(this);
     this.fileInput = React.createRef();
     this.state = {
       profileImage: '',
     };
   }
   handleImage(e) {
-    e.preventDefault();
-    const myFile = this.fileInput.current.files[0];
+    let myFile = e.target.files[0];
     fr.addEventListener('load', this.writeImage);
     fr.readAsDataURL(myFile);
   }
   writeImage() {
-    // profileImage.src = `${fr.result}`;
-    // profilePreview.style.backgroundImage = `url(${fr.result})`;
-    this.setState = {
+    // console.log(fr.result);
+    this.setState({
       profileImage: fr.result,
-    };
-    //   saveOnLocalStorage();
+    });
+    // console.log(this.state.profileImage);
+  }
+  fakeFileClick(e) {
+    e.preventDefault();
+    this.fileInput.click();
   }
   render() {
     return (
@@ -31,13 +34,11 @@ class Image extends React.Component {
           Imagen de perfil
         </label>
         <div class='img-container'>
-          <button type='button' class='btn-add js-btn-img' onClick={this.handleImage}>
+          <input onChange={this.handleImage} type='file' name='' id='img-selector' class='hiddenField js__profile-upload-btn' ref={(fileInput) => (this.fileInput = fileInput)} />
+          <button type='button' class='btn-add js-btn-img' onClick={this.fakeFileClick}>
             Añadir imagen
           </button>
-          <input type='file' name='' id='img-selector' class='hiddenField js__profile-upload-btn' ref={this.fileInput} />
-          <div class='img-user js-preview'>
-            <img src={this.state.profileImage} />
-          </div>
+          <div class='img-user js-preview' style={{ backgroundImage: `url(${this.state.profileImage})` }}></div>
         </div>
       </div>
     );
