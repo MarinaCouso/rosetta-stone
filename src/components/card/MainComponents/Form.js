@@ -17,8 +17,8 @@ function Form() {
         <FormInput htmlFor='fullname' value='Nombre completo' className='input-name' type='text' name='fullname' id='fullname' placeholder='Ej: Sally Jill' />
 
         <FormInput htmlFor='job' value='Puesto' className='js-input-job' type='text' name='job' id='job' placeholder='Ej: Front-end unicorn' />
-
-        <label htmlFor='img' className='label-img'>
+        <Image />
+        {/* <label htmlFor='img' className='label-img'>
           Imagen de perfil
         </label>
         <div className='img-container'>
@@ -32,8 +32,8 @@ function Form() {
             className='hiddenField js__profile-upload-btn'
             // onChange={handleInputData}
           />
-          <div className='img-user js-preview'></div>
-        </div>
+          <div className='img-user js-preview'></div> */}
+        {/* </div> */}
 
         <FormInput htmlFor='email' value='Email' className='js-input-mail' type='email' name='email' id='email' placeholder='Ej: sally-hill@gmail.com' />
 
