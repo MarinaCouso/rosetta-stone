@@ -9,7 +9,7 @@ class Palettes extends React.Component {
     //   this.props.handlePaletteInPreview(value);
     // };
     return (
-      <div class='section-page__design'>
+      <div className='section-page__design'>
         <Title icon='far fa-object-ungroup' title='Diseña' />
         <div className='section-page__design__colors collapsable-content'>
           <h3 className='section-page__design__colors__subtitle'>colores</h3>
