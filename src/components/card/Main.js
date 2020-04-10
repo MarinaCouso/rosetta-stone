@@ -26,14 +26,13 @@ class Main extends React.Component {
     return (
       <main className='section-profile'>
         <PreviewCard palette={this.state.palette} />
-        <section class='section-page'>
+        <section className='section-page'>
           <Design
             palette={this.state.palette}
             handlePaletteMain={this.handlePaletteMain}
           />
           <Form />
           <Share />
-          {/* <partial src="_section-design.html"></partial> */}
         </section>
       </main>
     );
