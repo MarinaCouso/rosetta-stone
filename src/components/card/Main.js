@@ -9,8 +9,16 @@ class Main extends React.Component {
     super(props);
     this.state = {
       palette: '1',
+      name: '',
+      job: '',
+      photo: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
     };
     this.handlePaletteMain = this.handlePaletteMain.bind(this);
+    this.handleInputData = this.handleInputData.bind(this);
   }
 
   handlePaletteMain(data) {
@@ -20,18 +28,22 @@ class Main extends React.Component {
       palette: data.value,
     });
   }
+  handleInputData(data) {
+    console.log(data);
+    this.setState({
+      [this.name]: data.name,
+      job: data.job,
+    });
+  }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <main className='section-profile'>
         <PreviewCard palette={this.state.palette} />
         <section className='section-page'>
-          <Design
-            palette={this.state.palette}
-            handlePaletteMain={this.handlePaletteMain}
-          />
-          <Form />
+          <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
+          <Form handleInputData={this.handleInputData} state={this.state} />
           <Share />
         </section>
       </main>
