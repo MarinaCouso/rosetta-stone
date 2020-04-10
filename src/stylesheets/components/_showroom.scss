@@ -71,3 +71,67 @@
   justify-content: center;
   margin-right: 10px;
 }
+
+.palette1 {
+  &__div {
+    border-left: solid 5px $userPaletteGreenish2;
+  }
+  &__layout--title {
+    color: $userPaletteGreenish1;
+  }
+  &__layout--text {
+    color: $textColor;
+  }
+  &__mediaicon {
+    border: solid 2px $userPaletteGreenish3;
+  }
+  &__icon {
+    color: $userPaletteGreenish1;
+  }
+}
+
+.palette2 {
+  &__div {
+    border-left: solid 5px $userPaletteBlood2;
+  }
+  &__layout--title {
+    color: $userPaletteBlood1;
+  }
+  &__layout--text {
+    color: $textColor;
+  }
+  &__mediaicon {
+    border: solid 2px $userPaletteBlood3;
+  }
+  &__icon {
+    color: $userPaletteBlood1;
+  }
+}
+
+.palette3 {
+  &__div {
+    border-left: solid 5px $userPaletteOffice2;
+  }
+  &__layout--title {
+    color: $userPaletteOffice1;
+  }
+  &__layout--text {
+    color: $textColor;
+  }
+  &__mediaicon {
+    border: solid 2px $userPaletteOffice3;
+  }
+  &__icon {
+    color: $userPaletteOffice1;
+  }
+}
+
+// user color palette Blood
+// $userPaletteBlood1: #420101;
+// $userPaletteBlood2: #bd1010;
+// $userPaletteBlood3: #e95626;
+
+// // user color palette Office
+// $userPaletteOffice1: #3e5b65;
+// $userPaletteOffice2: #eab052;
+// $userPaletteOffice3: #a0c0cf;
