@@ -17,11 +17,9 @@ class Image extends React.Component {
     fr.readAsDataURL(myFile);
   }
   writeImage() {
-    // console.log(fr.result);
     this.setState({
       profileImage: fr.result,
     });
-    // console.log(this.state.profileImage);
   }
   fakeFileClick(e) {
     e.preventDefault();
@@ -46,22 +44,3 @@ class Image extends React.Component {
 }
 
 export default Image;
-// function getImage(e) {
-//   var myFile = e.currentTarget.files[0];
-
-//   fr.addEventListener('load', writeImage);
-//   fr.readAsDataURL(myFile);
-// }
-
-// function writeImage() {
-//   /* En la propiedad `result` de nuestro FR se almacena el resultado
-//    */
-//   profileImage.src = `${fr.result}`;
-//   profilePreview.style.backgroundImage = `url(${fr.result})`;
-//   userInfo.photo = fr.result;
-//   saveOnLocalStorage();
-// }
-
-// function fakeFileClick() {
-//   fileField.click();
-// }

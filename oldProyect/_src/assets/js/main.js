@@ -1,63 +1,63 @@
-'use strict';
+"use strict";
 //Constantes globales
-const userName = document.querySelector('.js-input-name');
-const userJob = document.querySelector('.js-input-job');
-const userMail = document.querySelector('.js-input-mail');
-const userPhone = document.querySelector('.js-input-phone');
-const userLinkedin = document.querySelector('.js-input-linkedin');
-const userGithub = document.querySelector('.js-input-github');
+const userName = document.querySelector(".js-input-name");
+const userJob = document.querySelector(".js-input-job");
+const userMail = document.querySelector(".js-input-mail");
+const userPhone = document.querySelector(".js-input-phone");
+const userLinkedin = document.querySelector(".js-input-linkedin");
+const userGithub = document.querySelector(".js-input-github");
 //constante fr para leer archivo de img
 const fr = new FileReader();
-const uploadBtn = document.querySelector('.js-btn-img');
-const fileField = document.querySelector('.js__profile-upload-btn');
-const profileImage = document.querySelector('.photo');
-const profilePreview = document.querySelector('.js-preview');
-const showName = document.querySelector('.layout__title');
-const showJob = document.querySelector('.layout__text');
-const iconMail = document.querySelector('.js-mail-icon');
-const iconPhone = document.querySelector('.js-phone-icon');
-const iconLinkedin = document.querySelector('.js-linkedin-icon');
-const iconGithub = document.querySelector('.js-github-icon');
-const marginCard = document.querySelector('.showroom-card__texts');
-const icons = document.querySelectorAll('.icon');
-const borderIcons = document.querySelectorAll('.media-icon');
-const resetButton = document.querySelector('.reset-button');
+const uploadBtn = document.querySelector(".js-btn-img");
+const fileField = document.querySelector(".js__profile-upload-btn");
+const profileImage = document.querySelector(".photo");
+const profilePreview = document.querySelector(".js-preview");
+const showName = document.querySelector(".layout__title");
+const showJob = document.querySelector(".layout__text");
+const iconMail = document.querySelector(".js-mail-icon");
+const iconPhone = document.querySelector(".js-phone-icon");
+const iconLinkedin = document.querySelector(".js-linkedin-icon");
+const iconGithub = document.querySelector(".js-github-icon");
+const marginCard = document.querySelector(".showroom-card__texts");
+const icons = document.querySelectorAll(".icon");
+const borderIcons = document.querySelectorAll(".media-icon");
+const resetButton = document.querySelector(".reset-button");
 
 // PALETAS
 
 let palettes = [
   {
-    name: 'paleta1',
-    primaryColor: '#114E4E',
-    secondaryColor: '#438792',
-    tertiaryColor: '#A2DEAF',
-    id: '1'
+    name: "paleta1",
+    primaryColor: "#114E4E",
+    secondaryColor: "#438792",
+    tertiaryColor: "#A2DEAF",
+    id: "1",
   },
   {
-    name: 'paleta2',
-    primaryColor: '#420101',
-    secondaryColor: '#BD1010',
-    tertiaryColor: '#E95626',
-    id: '2'
+    name: "paleta2",
+    primaryColor: "#420101",
+    secondaryColor: "#BD1010",
+    tertiaryColor: "#E95626",
+    id: "2",
   },
   {
-    name: 'paleta3',
-    primaryColor: '#3E5B65',
-    secondaryColor: '#EAB052',
-    tertiaryColor: '#A0C0CF',
-    id: '3'
-  }
+    name: "paleta3",
+    primaryColor: "#3E5B65",
+    secondaryColor: "#EAB052",
+    tertiaryColor: "#A0C0CF",
+    id: "3",
+  },
 ];
 //objeto userinfo
 let userInfo = {
   palette: {},
-  name: '',
-  job: '',
-  photo: '',
-  email: '',
-  phone: '',
-  linkedin: '',
-  github: ''
+  name: "",
+  job: "",
+  photo: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  github: "",
 };
 
 //Funciones para obtener datos de usuario
@@ -91,25 +91,25 @@ function getUserJob() {
 }
 
 function showMail() {
-  iconMail.href = 'mailto:' + userMail.value;
+  iconMail.href = "mailto:" + userMail.value;
   userInfo.email = userMail.value;
   saveOnLocalStorage();
 }
 
 function showPhone() {
-  iconPhone.href = 'tel:' + userPhone.value;
+  iconPhone.href = "tel:" + userPhone.value;
   userInfo.phone = userPhone.value;
   saveOnLocalStorage();
 }
 
 function showLinkedin() {
-  iconLinkedin.href = 'https://www.linkedin.com/in/' + userLinkedin.value;
+  iconLinkedin.href = "https://www.linkedin.com/in/" + userLinkedin.value;
   userInfo.linkedin = userLinkedin.value;
   saveOnLocalStorage();
 }
 
 function showGithub() {
-  iconGithub.href = 'https://github.com/' + userGithub.value;
+  iconGithub.href = "https://github.com/" + userGithub.value;
   userInfo.github = userGithub.value;
   saveOnLocalStorage();
 }
@@ -117,7 +117,7 @@ function showGithub() {
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
 
-  fr.addEventListener('load', writeImage);
+  fr.addEventListener("load", writeImage);
   fr.readAsDataURL(myFile);
 }
 
@@ -134,38 +134,38 @@ function fakeFileClick() {
   fileField.click();
 }
 
-userName.addEventListener('keyup', getUserName);
-userJob.addEventListener('keyup', getUserJob);
-userMail.addEventListener('keyup', showMail);
-userPhone.addEventListener('keyup', showPhone);
-userLinkedin.addEventListener('keyup', showLinkedin);
-userGithub.addEventListener('keyup', showGithub);
+userName.addEventListener("keyup", getUserName);
+userJob.addEventListener("keyup", getUserJob);
+userMail.addEventListener("keyup", showMail);
+userPhone.addEventListener("keyup", showPhone);
+userLinkedin.addEventListener("keyup", showLinkedin);
+userGithub.addEventListener("keyup", showGithub);
+uploadBtn.addEventListener("click", fakeFileClick);
 
-uploadBtn.addEventListener('click', fakeFileClick);
-fileField.addEventListener('change', getImage);
+fileField.addEventListener("change", getImage);
 
 //function collapsable
-const collapsableTrigger = document.querySelectorAll('.collapsable-header');
+const collapsableTrigger = document.querySelectorAll(".collapsable-header");
 
 function collapsable(e) {
   const parentEventArrow = e.currentTarget.parentElement;
-  if (!parentEventArrow.classList.contains('collapsable-close')) {
-    parentEventArrow.classList.add('collapsable-close');
+  if (!parentEventArrow.classList.contains("collapsable-close")) {
+    parentEventArrow.classList.add("collapsable-close");
   } else {
     for (const item of collapsableTrigger) {
-      item.parentElement.classList.add('collapsable-close');
+      item.parentElement.classList.add("collapsable-close");
     }
-    parentEventArrow.classList.remove('collapsable-close');
+    parentEventArrow.classList.remove("collapsable-close");
   }
 }
 for (const trigger of collapsableTrigger) {
-  trigger.addEventListener('click', collapsable);
+  trigger.addEventListener("click", collapsable);
 }
 
-const buttonRadio = document.querySelectorAll('.js-radio');
+const buttonRadio = document.querySelectorAll(".js-radio");
 
 for (let i = 0; i < buttonRadio.length; i++) {
-  buttonRadio[i].addEventListener('click', listenToPalette);
+  buttonRadio[i].addEventListener("click", listenToPalette);
   buttonRadio[i].value = i + 1;
 }
 
@@ -183,11 +183,11 @@ function listenToPalette(ev) {
 }
  */
 function saveOnLocalStorage() {
-  localStorage.setItem('user', JSON.stringify(userInfo));
+  localStorage.setItem("user", JSON.stringify(userInfo));
 }
 
 function returnInfo() {
-  const returnUserInfo = localStorage.getItem('user');
+  const returnUserInfo = localStorage.getItem("user");
   if (returnUserInfo !== null) {
     userInfo = JSON.parse(returnUserInfo);
     paintInfoLocal();
@@ -203,10 +203,10 @@ function paintInfoLocal() {
   userLinkedin.value = userInfo.linkedin;
   userGithub.value = userInfo.github;
   showJob.innerHTML = userJob.value;
-  iconGithub.href = 'https://github.com/' + userGithub.value;
-  iconLinkedin.href = 'https://www.linkedin.com/in/' + userLinkedin.value;
-  iconPhone.href = 'tel:' + userPhone.value;
-  iconMail.href = 'mailto:' + userMail.value;
+  iconGithub.href = "https://github.com/" + userGithub.value;
+  iconLinkedin.href = "https://www.linkedin.com/in/" + userLinkedin.value;
+  iconPhone.href = "tel:" + userPhone.value;
+  iconMail.href = "mailto:" + userMail.value;
   showName.innerHTML = userName.value;
   showName.style.color = userInfo.palette.primaryColor;
   marginCard.style.borderLeftColor = userInfo.palette.secondaryColor;
