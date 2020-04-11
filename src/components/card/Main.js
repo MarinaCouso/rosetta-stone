@@ -46,7 +46,7 @@ class Main extends React.Component {
     console.log(this.state);
     return (
       <main className='section-profile'>
-        <PreviewCard palette={this.state.palette} />
+        <PreviewCard palette={this.state.palette} photo={this.state.photo} />
         <section className='section-page'>
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
           <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
