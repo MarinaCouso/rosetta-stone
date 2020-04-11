@@ -9,8 +9,17 @@ class Main extends React.Component {
     super(props);
     this.state = {
       palette: '1',
+      name: '',
+      job: '',
+      photo: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
     };
     this.handlePaletteMain = this.handlePaletteMain.bind(this);
+    this.handleInputData = this.handleInputData.bind(this);
+    this.handleInputImage = this.handleInputImage.bind(this);
   }
 
   handlePaletteMain(data) {
@@ -20,20 +29,28 @@ class Main extends React.Component {
       palette: data.value,
     });
   }
+  handleInputData(data) {
+    // console.log('mi data de main', data.value);
+    this.setState({
+      [data.name]: data.value,
+    });
+  }
+  handleInputImage(data) {
+    // console.log('mi imagen de main', data.value);
+    this.setState({
+      photo: data.value,
+    });
+  }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <main className='section-profile'>
         <PreviewCard palette={this.state.palette} />
-        <section class='section-page'>
-          <Design
-            palette={this.state.palette}
-            handlePaletteMain={this.handlePaletteMain}
-          />
-          <Form />
+        <section className='section-page'>
+          <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
+          <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
           <Share />
-          {/* <partial src="_section-design.html"></partial> */}
         </section>
       </main>
     );

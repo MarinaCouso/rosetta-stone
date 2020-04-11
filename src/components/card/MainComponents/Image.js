@@ -17,8 +17,10 @@ class Image extends React.Component {
     fr.readAsDataURL(myFile);
   }
   writeImage() {
-    this.setState({
-      profileImage: fr.result,
+    const profileImage = fr.result;
+    this.props.handleInputImage({
+      value: profileImage,
+      id: 'photo',
     });
   }
   fakeFileClick(e) {
@@ -28,15 +30,15 @@ class Image extends React.Component {
   render() {
     return (
       <div>
-        <label for='img' class='label-img'>
+        <label htmlFor='img' className='label-img'>
           Imagen de perfil
         </label>
-        <div class='img-container'>
-          <input onChange={this.handleImage} type='file' name='' id='img-selector' class='hiddenField js__profile-upload-btn' ref={(fileInput) => (this.fileInput = fileInput)} />
-          <button type='button' class='btn-add js-btn-img' onClick={this.fakeFileClick}>
+        <div className='img-container'>
+          <input onChange={this.handleImage} type='file' name='' id='img-selector' className='hiddenField js__profile-upload-btn' ref={(fileInput) => (this.fileInput = fileInput)} />
+          <button type='button' className='btn-add js-btn-img' onClick={this.fakeFileClick}>
             Añadir imagen
           </button>
-          <div class='img-user js-preview' style={{ backgroundImage: `url(${this.state.profileImage})` }}></div>
+          <div className='img-user js-preview' style={{ backgroundImage: `url(${this.props.state.photo})` }}></div>
         </div>
       </div>
     );
