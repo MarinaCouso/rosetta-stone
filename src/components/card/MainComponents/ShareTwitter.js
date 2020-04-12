@@ -29,24 +29,6 @@ import React from 'react';
 
 //   console.log(json);
 
-//   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-//     method: 'POST',
-//     body: JSON.stringify(json),
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then(function (resp) {
-//       return resp.json();
-//     })
-//     .then(function (result) {
-//       showURL(result);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-// }
-
 // function showURL(result) {
 //   let cardUrl = result.cardURL;
 //   console.log(cardUrl);
@@ -64,14 +46,34 @@ import React from 'react';
 //
 
 function ShareTwitter(props) {
+  function createCard() {
+    const json = JSON.stringify(props.data.state);
+    console.log(json);
+    // fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    //   method: 'POST',
+    //   body: JSON.stringify(props.state),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
+    //   .then(function (resp) {
+    //     console.log(props.state);
+    //     // return resp.json();
+    //   })
+    //   .then(function (result) {
+    //     // showURL(result);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+  }
   console.log(props.state);
   return (
     <div className='section-page__card-create'>
       <h3 className='section-page__card-create__title'>La tarjeta ha sido creada</h3>
       <a href='#' className='section-page__card-create__link-card' target='_blank'></a>
-      <button type='submit' className='section-page__card-create__rrss-btn'>
-        {/* <i className='fab fa-twitter' style='font-size: 18px;'
-        ></i>  */}
+      <button type='submit' className='section-page__card-create__rrss-btn' onClick={createCard}>
+        <i className='fab fa-twitter' style={{ fontSize: '18px' }}></i>
         Compartir en twitter
       </button>
     </div>

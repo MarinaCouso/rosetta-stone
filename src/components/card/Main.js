@@ -29,14 +29,14 @@ class Main extends React.Component {
     });
   }
   handleInputData(data) {
-    console.log('mi data de main', data.value);
+    // console.log('mi data de main', data.value);
     this.setState({
       [data.name]: data.value,
     });
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <main className='section-profile'>
         <PreviewCard palette={this.state.palette} />
