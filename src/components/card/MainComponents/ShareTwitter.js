@@ -57,46 +57,47 @@ const fakeData = {
 
 //
 // F(x) de los apuntes
-let showCard = '';
+let showCard = 'Aún no está creada la tarjeta';
+
+const json = fakeData;
 function showURL(result) {
   console.log('estoy en ello', result.cardURL);
-  showCard = '<a href=' + result.cardURL + '/>';
-  // if (result.success) {
-  //   showCard = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-  // } else {
-  //   showCard = 'ERROR:' + result.error;
-  // }
+  // debugger;
+  if (result.success) {
+    showCard = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+  } else {
+    showCard = 'ERROR:' + result.error;
+  }
 }
-
+console.log(JSON.stringify(json));
+function createCard() {
+  fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+    method: 'POST',
+    body: JSON.stringify(json),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(function (resp) {
+      return resp.json();
+    })
+    .then(function (result) {
+      showURL(result);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 function ShareTwitter(props) {
   console.log(props.data.state.photo);
-  const json = fakeData;
 
-  console.log(JSON.stringify(json));
-  function createCard() {
-    debugger;
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
-      body: JSON.stringify(json),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(function (resp) {
-        return resp.json();
-      })
-      .then(function (result) {
-        console.log(showURL(result));
-        showURL(result);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
   return (
     <div className='section-page__card-create'>
       {/* <h3 className='section-page__card-create__title'>La tarjeta ha sido creada</h3> */}
-      {/* <a href='#' className='section-page__card-create__link-card' target='_blank'></a> */}
+      {/* <p>Una vez que solicites tu tarjeta en el botón de abajo, espera unos segundos</p>
+      <a href={showCard} className='section-page__card-create__link-card'>
+        {showCard}
+      </a> */}
       <button type='submit' className='section-page__card-create__rrss-btn' onClick={createCard}>
         <i className='fab fa-twitter' style={{ fontSize: '18px' }}></i>
         Compartir en twitter
