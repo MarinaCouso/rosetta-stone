@@ -5,7 +5,7 @@ function FormInput(props) {
     // const inputDataLabel = ev.currentTarget.name;
     // console.log(inputDataLabel);
     // console.log('Me han cambiado', ev.currentTarget.name, ev.currentTarget.value);
-    props.handleInputForm({
+    props.handleInputData({
       value: ev.currentTarget.value,
       name: ev.currentTarget.name,
     });
