@@ -12,8 +12,8 @@ function PreviewCard(props) {
       </button>
       <div className='layout'>
         <div className={`showroom-card__texts palette${props.state.palette}__div `}>
-          <h1 className={`layout__title palette${props.state.palette}__layout--title`}>Gatete Frog</h1>
-          <p className='layout__text'>Front-end developer</p>
+          <h1 className={`layout__title palette${props.state.palette}__layout--title`}>{props.state.name || 'Gatete Frog'}</h1>
+          <p className='layout__text'>{props.state.job || 'Front-end developer'}</p>
         </div>
 
         <img className='photo' src={props.state.photo || userImage} alt='' title='tu foto' />
