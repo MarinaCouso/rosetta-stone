@@ -16,7 +16,7 @@ function PreviewCard(props) {
           <p className='layout__text'>Front-end developer</p>
         </div>
 
-        <img className='photo' src={props.photo || userImage} alt='' title='tu foto' />
+        <img className='photo' src={props.state.photo || userImage} alt='' title='tu foto' />
 
         <nav>
           <ul className='media-icons'>
