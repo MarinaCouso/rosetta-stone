@@ -19,6 +19,7 @@ class Main extends React.Component {
     };
     this.handlePaletteMain = this.handlePaletteMain.bind(this);
     this.handleInputData = this.handleInputData.bind(this);
+    this.handleInputImage = this.handleInputImage.bind(this);
   }
 
   handlePaletteMain(data) {
@@ -34,16 +35,27 @@ class Main extends React.Component {
       [data.name]: data.value,
     });
   }
+  handleInputImage(data) {
+    // console.log('mi imagen de main', data.value);
+    this.setState({
+      photo: data.value,
+    });
+  }
 
   render() {
     // console.log(this.state);
     return (
       <main className='section-profile'>
-        <PreviewCard palette={this.state.palette} />
+        <PreviewCard palette={this.state.palette} state={this.state} />
         <section className='section-page'>
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
+<<<<<<< HEAD
           <Form handleInputData={this.handleInputData} state={this.state} />
           <Share state={this.state} />
+=======
+          <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
+          <Share />
+>>>>>>> dev
         </section>
       </main>
     );

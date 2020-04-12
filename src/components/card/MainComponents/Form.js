@@ -18,23 +18,7 @@ function Form(props) {
         <FormInput htmlFor='fullname' label='Nombre completo' className='input-name' type='text' name='name' id='fullname' placeholder='Ej: Sally Jill' handleInputForm={props.handleInputData} />
 
         <FormInput htmlFor='job' label='Puesto' className='js-input-job' type='text' name='job' id='job' placeholder='Ej: Front-end unicorn' handleInputForm={props.handleInputData} />
-        <Image />
-        {/* <label htmlFor='img' className='label-img'>
-          Imagen de perfil
-        </label>
-        <div className='img-container'>
-          <button type='button' className='btn-add js-btn-img'>
-            Añadir imagen
-          </button>
-          <input
-            type='file'
-            name=''
-            id='img-selector'
-            className='hiddenField js__profile-upload-btn'
-            // onChange={handleInputData}
-          />
-          <div className='img-user js-preview'></div> */}
-        {/* </div> */}
+        <Image handleInputImage={props.handleInputImage} state={props.state} />
 
         <FormInput htmlFor='email' label='Email' className='js-input-mail' type='email' name='email' id='email' placeholder='Ej: sally-hill@gmail.com' />
 
