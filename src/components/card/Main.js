@@ -49,13 +49,8 @@ class Main extends React.Component {
         <PreviewCard palette={this.state.palette} state={this.state} />
         <section className='section-page'>
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
-<<<<<<< HEAD
           <Form handleInputData={this.handleInputData} state={this.state} />
           <Share state={this.state} />
-=======
-          <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
-          <Share />
->>>>>>> dev
         </section>
       </main>
     );
