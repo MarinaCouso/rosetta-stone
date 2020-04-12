@@ -11,14 +11,13 @@ import Image from './Image';
 // };
 
 function Form(props) {
-  console.log('hola mis props', props);
   return (
     <div className='section-page__fill collapsable-close'>
       <SectionTitle icon='far fa-keyboard' title='Rellena' />
       <form action='' method='GET' id='info-user' className='section-page__fill__form collapsable-content'>
-        <FormInput htmlFor='fullname' label='Nombre completo' className='input-name' type='text' name='name' id='fullname' placeholder='Ej: Sally Jill' handleInputForm={props.handleInputData} value={props.state.name} />
+        <FormInput htmlFor='fullname' label='Nombre completo' className='input-name' type='text' name='name' id='fullname' placeholder='Ej: Sally Jill' handleInputForm={props.handleInputData} />
 
-        <FormInput htmlFor='job' label='Puesto' className='js-input-job' type='text' name='job' id='job' placeholder='Ej: Front-end unicorn' handleInputForm={props.handleInputData} value={props.state.job} />
+        <FormInput htmlFor='job' label='Puesto' className='js-input-job' type='text' name='job' id='job' placeholder='Ej: Front-end unicorn' handleInputForm={props.handleInputData} />
         <Image />
         {/* <label htmlFor='img' className='label-img'>
           Imagen de perfil

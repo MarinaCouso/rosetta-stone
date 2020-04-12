@@ -6,13 +6,14 @@ function FormInput(props) {
     // console.log(inputDataLabel);
     console.log('Me han cambiado', ev.currentTarget.name, ev.currentTarget.value);
     props.handleInputForm({
-      [ev.currentTarget.name]: ev.currentTarget.value,
+      value: ev.currentTarget.value,
+      name: ev.currentTarget.name,
     });
   }
   return (
     <div>
       <label htmlFor={props.htmlFor}>{props.label}</label>
-      <input className={props.className} type={props.type} value={props.value} name={props.name} id={props.id} placeholder={props.placeholder} onKeyUp={handleInputForm} required />
+      <input className={props.className} type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} onKeyUp={handleInputForm} required />
     </div>
   );
 }

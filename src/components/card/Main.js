@@ -29,10 +29,9 @@ class Main extends React.Component {
     });
   }
   handleInputData(data) {
-    console.log(data);
+    console.log('mi data de main', data.value);
     this.setState({
-      [this.name]: data.name,
-      job: data.job,
+      [data.name]: data.value,
     });
   }
 
