@@ -43,7 +43,7 @@ class Main extends React.Component {
         <section className='section-page'>
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
           <Form handleInputData={this.handleInputData} state={this.state} />
-          <Share />
+          <Share state={this.state} />
         </section>
       </main>
     );
