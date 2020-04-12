@@ -1,4 +1,16 @@
 import React from 'react';
+
+// Prueba con datos fake porque la API necesita recibir todos los datos completos
+const fakeData = {
+  palette: '1',
+  name: 'marina',
+  job: 'cualquiera',
+  photo: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACmUlEQVR4AYyMA8xlRxTHfzNz8fw+r71Bbdu2bRthGTWqGdV2G9eOq2Bt43v2u3fm9NZu9yRHf7ElJbXjHkh6+T9x+n/Nm468ESc3IjJTxo964F8D5JXJO8pb02fy1+r07iKKwbqk5UZZe9iFf6QVgNwzcUeG40/ImZvozd2BMWrq2K/ulm92OxDfJHgKQh8AYgeED+L5z6rJ736nAOT26cspdGeS8aoEgwOdaOqD7z/7BKNzVp2YnbJm5sC2C5ixz+dgNKiknQe+vwJldzJy5dYXAheiBUw/RaYB2WjPSmnnPZtrdxjorJ5NdcVUvPxmiiOrwBmQpB0DaLtQ0wpOoB1AHpiYgoE8frrFPudczy6X3YqbWKFjh8hPL4FvoOGgCVgg4gTtqtmZSQhUQwgE0gaGC6zqH8j3q09ntZ3FuC3ywX1XQ7cH/RgqCroO6XkDXjxe3DHwY1gBbArpHCQ88NTD1LytCYMs2cCR6jlqm4tQb0MnDSUDQ3WoDOBpy6e0ggMRwGrGV6ZYsklgZAO+zpFzPvl+TIFNsNFC00eCLpQVNA3mRnvggel8Y0dEg9MUdZ31ecOS9cNEtottN5F6nRO2e5ZJqoz0AtRAG6lloJn+1NzoDqqBuzD0e+A01EJ2LcxnzN8MrS4T3BrOHn2TbdMLAVCBhcgQrxlBxf5NCmBd8bpPBqetOzDMtFF+BIFNOgbPJW3BSNIOUgoKhm47MavCO6mnXjzJA5DIP2l85aRPsqOlHQsDLXQUobq/BiStf2zBiaa9cAh08TtvlIsAFADA2uxNA07Fb0vYPjBbbBGk+oRhhNKOKFL0uyG9WhEdZT71c3LSwKrHqn8K+EPQhUnQBaLsgaIcoNDioZ15J9nvTmr/sJ4FyOoBUrwhHG0SnxcAAAAASUVORK5CYII=',
+  email: 'marina@madrid.es',
+  phone: '736736721',
+  linkedin: 'https://www.linkedin.com/in/marinacousomartinez/',
+  github: 'https://github.com/MarinaCouso',
+};
 // import '../../../stylesheets/components/_section-design.scss';
 
 // JS COPIADO DEL PROYECTO MODULO 2 EQUIPO 1
@@ -47,15 +59,19 @@ import React from 'react';
 // F(x) de los apuntes
 let showCard = '';
 function showURL(result) {
-  if (result.success) {
-    showCard = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
-  } else {
-    showCard = 'ERROR:' + result.error;
-  }
+  console.log('estoy en ello', result.cardURL);
+  showCard = '<a href=' + result.cardURL + '/>';
+  // if (result.success) {
+  //   showCard = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+  // } else {
+  //   showCard = 'ERROR:' + result.error;
+  // }
 }
 
 function ShareTwitter(props) {
-  const json = props.data.state;
+  console.log(props.data.state.photo);
+  const json = fakeData;
+
   console.log(JSON.stringify(json));
   function createCard() {
     debugger;
@@ -70,6 +86,7 @@ function ShareTwitter(props) {
         return resp.json();
       })
       .then(function (result) {
+        console.log(showURL(result));
         showURL(result);
       })
       .catch(function (error) {
