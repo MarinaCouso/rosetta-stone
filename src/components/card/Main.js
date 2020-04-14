@@ -48,8 +48,15 @@ class Main extends React.Component {
       <main className='section-profile'>
         <PreviewCard palette={this.state.palette} state={this.state} />
         <section className='section-page'>
-          <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
-          <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
+          <Design
+            palette={this.state.palette}
+            handlePaletteMain={this.handlePaletteMain}
+          />
+          <Form
+            handleInputData={this.handleInputData}
+            state={this.state}
+            handleInputImage={this.handleInputImage}
+          />
           <Share />
         </section>
       </main>
