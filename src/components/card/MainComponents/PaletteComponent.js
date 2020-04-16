@@ -8,14 +8,14 @@ function PaletteComponent(props) {
       value: ev.currentTarget.value,
     });
   }
-  console.log(props);
+  // console.log(props);
   return (
     <label htmlFor={props.id} className={props.aClass}>
-      <input type='radio' id={props.id} name='colors' className='js-radio' value={props.value} checked={props.value === props.currentValue} onChange={handleChange} />
+      <input type="radio" id={props.id} name="colors" className="js-radio" value={props.value} checked={props.value === props.currentValue} onChange={handleChange} />
       <ul className={props.classList}>
-        <li className='list--color'></li>
-        <li className='list--color'></li>
-        <li className='list--color'></li>
+        <li className="list--color"></li>
+        <li className="list--color"></li>
+        <li className="list--color"></li>
       </ul>
     </label>
   );
