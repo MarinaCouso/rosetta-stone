@@ -64,7 +64,7 @@ function showURL(result) {
   console.log('estoy en ello', result.cardURL);
   // debugger;
   if (result.success) {
-    showCard = '<a href=' + result.cardURL + '>' + result.cardURL + '</a>';
+    showCard = `<a href='${result.cardURL}'></a>`;
   } else {
     showCard = 'ERROR:' + result.error;
   }
