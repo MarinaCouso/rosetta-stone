@@ -20,6 +20,7 @@ class Main extends React.Component {
     this.handlePaletteMain = this.handlePaletteMain.bind(this);
     this.handleInputData = this.handleInputData.bind(this);
     this.handleInputImage = this.handleInputImage.bind(this);
+    this.handleResetButton = this.handleResetButton.bind(this);
   }
 
   handlePaletteMain(data) {
@@ -41,13 +42,26 @@ class Main extends React.Component {
       photo: data.value,
     });
   }
+  handleResetButton() {
+    // console.log('mi imagen de main', data.value);
+    this.setState({
+      palette: '1',
+      name: '',
+      job: '',
+      photo: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+    });
+  }
 
   render() {
     // console.log(this.state);
     return (
-      <main className='section-profile'>
-        <PreviewCard palette={this.state.palette} state={this.state} />
-        <section className='section-page'>
+      <main className="section-profile">
+        <PreviewCard palette={this.state.palette} state={this.state} handleResetButton={this.handleResetButton} />
+        <section className="section-page">
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
           <Form handleInputData={this.handleInputData} handleInputImage={this.handleInputImage} state={this.state} />
           <Share state={this.state} />
