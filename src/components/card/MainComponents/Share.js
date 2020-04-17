@@ -3,10 +3,6 @@ import ShareTwitter from './ShareTwitter';
 import SectionTitle from './SectionTitle';
 
 class Share extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
