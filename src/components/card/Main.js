@@ -21,29 +21,38 @@ class Main extends React.Component {
     this.handleInputData = this.handleInputData.bind(this);
     this.handleInputImage = this.handleInputImage.bind(this);
     this.handleResetButton = this.handleResetButton.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
+  }
+
+  componentDidMount() {
+    const userInfo = JSON.parse(localStorage.getItem('userData'));
+    if (userInfo !== null) {
+      this.setState(userInfo);
+      console.log(userInfo);
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('userData', JSON.stringify(this.state));
   }
 
   handlePaletteMain(data) {
-    // console.log('Yo soy handlePaletteMain');
-    // console.log(data.value);
     this.setState({
       palette: data.value,
     });
   }
   handleInputData(data) {
-    // console.log('mi data de main', data.value);
     this.setState({
       [data.name]: data.value,
     });
   }
   handleInputImage(data) {
-    // console.log('mi imagen de main', data.value);
     this.setState({
       photo: data.value,
     });
   }
   handleResetButton() {
-    // console.log('mi imagen de main', data.value);
     this.setState({
       palette: '1',
       name: '',
@@ -59,9 +68,9 @@ class Main extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <main className="section-profile">
+      <main className='section-profile'>
         <PreviewCard palette={this.state.palette} state={this.state} handleResetButton={this.handleResetButton} />
-        <section className="section-page">
+        <section className='section-page'>
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
           <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
           <Share />
