@@ -15,12 +15,13 @@ import React from 'react';
 let showCard = 'Aún no está creada la tarjeta';
 
 function ShareTwitter(props) {
-  // console.log(props.data.state.photo);
-  console.log(JSON.stringify(props.state));
-  function createCard(props) {
+  // let prueba = props.data.state;
+  console.log(props);
+  console.log(JSON.stringify(props.data));
+  function createCard() {
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
       method: 'POST',
-      body: JSON.stringify(props.state),
+      body: JSON.stringify(props.data.state),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -45,14 +46,14 @@ function ShareTwitter(props) {
     }
   }
   return (
-    <div className='section-page__card-create'>
+    <div className="section-page__card-create">
       {/* <h3 className='section-page__card-create__title'>La tarjeta ha sido creada</h3> */}
       {/* <p>Una vez que solicites tu tarjeta en el botón de abajo, espera unos segundos</p>
       <a href={showCard} className='section-page__card-create__link-card'>
         {showCard}
       </a> */}
-      <button type='submit' className='section-page__card-create__rrss-btn' onClick={createCard}>
-        <i className='fab fa-twitter' style={{ fontSize: '18px' }}></i>
+      <button type="submit" className="section-page__card-create__rrss-btn" onClick={createCard}>
+        <i className="fab fa-twitter" style={{ fontSize: '18px' }}></i>
         Compartir en twitter
       </button>
       <p>{showCard}</p>
