@@ -16,7 +16,7 @@ function Form(props) {
     <div className="section-page__fill collapsable-close">
       <SectionTitle icon="far fa-keyboard" title="Rellena" />
       <form action="" method="GET" id="info-user" className="section-page__fill__form collapsable-content">
-        <FormInput htmlFor="fullname" label="Nombre completo" className="input-name" type="text" name="name" id="fullname" placeholder="Ej: Sally Jill" handleInputForm={props.handleInputData} state={props.state} />
+        <FormInput htmlFor="fullname" label="Nombre completo" className="input-name" type="text" name="name" id="fullname" placeholder="Ej: Sally Jill" handleInputForm={props.handleInputData} state={props.value} />
 
         <FormInput htmlFor="job" label="Puesto" className="js-input-job" type="text" name="job" id="job" placeholder="Ej: Front-end unicorn" handleInputForm={props.handleInputData} state={props.state} />
 

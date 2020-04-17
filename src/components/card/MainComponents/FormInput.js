@@ -13,7 +13,7 @@ function FormInput(props) {
   return (
     <div>
       <label htmlFor={props.htmlFor}>{props.label}</label>
-      <input className={props.className} type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} onKeyUp={handleInputForm} href={props.href} required />
+      <input className={props.className} type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} onKeyUp={handleInputForm} href={props.href} value={props.value} required />
     </div>
   );
 }
