@@ -17,7 +17,7 @@ function Share(props) {
           <button type="submit">crear tarjeta</button>
         </form>
       </div>
-      <ShareTwitter data={props} />
+      <ShareTwitter data={props.state} />
     </div>
   );
 }
