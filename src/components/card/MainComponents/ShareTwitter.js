@@ -15,13 +15,13 @@ import React from 'react';
 let showCard = 'Aún no está creada la tarjeta';
 
 function ShareTwitter(props) {
-  // console.log(props.data.state.photo);
-  const myData = props.data.state.photo;
-  console.log(myData);
-  function createCard(props) {
+  // let prueba = props.data.state;
+  console.log(props);
+  console.log(JSON.stringify(props.data));
+  function createCard() {
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
       method: 'POST',
-      body: JSON.stringify(myData),
+      body: JSON.stringify(props.data.state),
       headers: {
         'Content-Type': 'application/json',
       },
