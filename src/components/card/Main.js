@@ -29,7 +29,7 @@ class Main extends React.Component {
     const userInfo = JSON.parse(localStorage.getItem('userData'));
     if (userInfo !== null) {
       this.setState(userInfo);
-      console.log(userInfo);
+      // console.log(userInfo);
     }
   }
 
@@ -66,13 +66,24 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <main className='section-profile'>
-        <PreviewCard palette={this.state.palette} state={this.state} handleResetButton={this.handleResetButton} />
+        <PreviewCard
+          palette={this.state.palette}
+          state={this.state}
+          handleResetButton={this.handleResetButton}
+        />
         <section className='section-page'>
-          <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
-          <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
+          <Design
+            palette={this.state.palette}
+            handlePaletteMain={this.handlePaletteMain}
+          />
+          <Form
+            handleInputData={this.handleInputData}
+            state={this.state}
+            handleInputImage={this.handleInputImage}
+          />
           <Share />
         </section>
       </main>

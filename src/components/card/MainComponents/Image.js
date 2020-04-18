@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 const fr = new FileReader();
 class Image extends React.Component {
   constructor(props) {
@@ -34,15 +36,34 @@ class Image extends React.Component {
           Imagen de perfil
         </label>
         <div className='img-container'>
-          <input onChange={this.handleImage} type='file' name='' id='img-selector' className='hiddenField js__profile-upload-btn' ref={(fileInput) => (this.fileInput = fileInput)} />
-          <button type='button' className='btn-add js-btn-img' onClick={this.fakeFileClick}>
+          <input
+            onChange={this.handleImage}
+            type='file'
+            name=''
+            id='img-selector'
+            className='hiddenField js__profile-upload-btn'
+            ref={(fileInput) => (this.fileInput = fileInput)}
+          />
+          <button
+            type='button'
+            className='btn-add js-btn-img'
+            onClick={this.fakeFileClick}
+          >
             Añadir imagen
           </button>
-          <div className='img-user js-preview' style={{ backgroundImage: `url(${this.props.state.photo})` }}></div>
+          <div
+            className='img-user js-preview'
+            style={{ backgroundImage: `url(${this.props.state.photo})` }}
+          ></div>
         </div>
       </div>
     );
   }
 }
+
+Image.propTypes = {
+  handleInputImage: PropTypes.func.isRequired,
+  state: PropTypes.object.isRequired,
+};
 
 export default Image;

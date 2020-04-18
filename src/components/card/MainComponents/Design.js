@@ -1,6 +1,7 @@
 import React from 'react';
 import PaletteComponent from './PaletteComponent';
 import SectionTitle from './SectionTitle';
+import PropTypes from 'prop-types';
 
 class Design extends React.Component {
   render() {
@@ -49,5 +50,10 @@ class Design extends React.Component {
     );
   }
 }
+
+Design.propTypes = {
+  palette: PropTypes.string.isRequired,
+  handlePaletteMain: PropTypes.func.isRequired,
+};
 
 export default Design;
