@@ -7,8 +7,8 @@ import Landing from './Landing';
 function App() {
   return (
     <Switch>
-      <Route path='/Landing' component={Landing} />
       <Route path='/Card' component={Card} />
+      <Route path='/' component={Landing} />
     </Switch>
   );
 }
