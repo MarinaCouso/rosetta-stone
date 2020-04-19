@@ -2,7 +2,7 @@ import React from 'react';
 // import '../../../stylesheets/components/_section-design.scss';
 function ShareTwitter() {
   return (
-    <div className="section-page__card-create">
+    <div className="section-page__card-create collapsable-content">
       <h3 className="section-page__card-create__title">La tarjeta ha sido creada</h3>
       <a href="#" className="section-page__card-create__link-card" target="_blank"></a>
       <button type="submit" className="section-page__card-create__rrss-btn">
