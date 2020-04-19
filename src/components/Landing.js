@@ -1,12 +1,13 @@
 import React from 'react';
-import Preview from '../components/card/MainComponents/Preview';
+import { Link } from 'react-router-dom';
+import Card from './Card';
 import Footer from '../components/card/Footer';
 
 function Landing() {
   return (
     <>
       <div class='index-main'>
-        <img class='index-main__image' src='./assets/images/awesome-profile-cards-logo.svg' />
+        <img class='index-main__image' src='./assets/images/awesome-profile-cards-logo.svg' alt='logo' />
         <h1 class='index-main__title'>Crea tu tarjeta de visita</h1>
         <p class='index-main__content'>Crea mejores contactos profesionales de forma fácil y cómoda</p>
         <div class='index-main__table'>
@@ -25,9 +26,9 @@ function Landing() {
             </li>
           </ul>
         </div>
-        <a href={Preview} class='index-main__button'>
+        <Link to={Card} className='index-main__button'>
           Comenzar
-        </a>
+        </Link>
       </div>
       <Footer />
     </>

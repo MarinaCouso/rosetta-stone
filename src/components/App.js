@@ -1,15 +1,15 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.scss';
 import Card from './Card';
-// import Landing from './Landing';
-// import Preview from './card/MainComponents/Preview';
+import Landing from './Landing';
 
 function App() {
   return (
-    <div>
-      {/* <Landing /> */}
-      <Card />
-    </div>
+    <Switch>
+      <Route path='/Landing' component={Landing} />
+      <Route path='/Card' component={Card} />
+    </Switch>
   );
 }
 
