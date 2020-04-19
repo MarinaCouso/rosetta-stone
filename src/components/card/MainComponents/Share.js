@@ -16,7 +16,7 @@ function Share(props) {
   // }
 
   console.log(props);
-  // console.log(JSON.stringify(props.data));
+  console.log(JSON.stringify(props.state));
 
   function createCard() {
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
@@ -51,7 +51,7 @@ function Share(props) {
       <div className="section-page__share collapsable-close">
         <SectionTitle icon="fas fa-share-alt" title="Comparte" />
         <form className="section-page__share__form collapsable-content">
-          <button type="submit" onClick={createCard}>
+          <button type="submit" onChange={createCard}>
             crear tarjeta
           </button>
           <p>{showCard}</p>
