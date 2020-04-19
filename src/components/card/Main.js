@@ -68,12 +68,12 @@ class Main extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <main className='section-profile'>
+      <main className="section-profile">
         <PreviewCard palette={this.state.palette} state={this.state} handleResetButton={this.handleResetButton} />
-        <section className='section-page'>
+        <section className="section-page">
           <Design palette={this.state.palette} handlePaletteMain={this.handlePaletteMain} />
           <Form handleInputData={this.handleInputData} state={this.state} handleInputImage={this.handleInputImage} />
-          <Share />
+          <Share state={this.state} />
         </section>
       </main>
     );

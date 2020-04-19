@@ -21,7 +21,7 @@ function Share(props) {
   function createCard() {
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
       method: 'POST',
-      body: JSON.stringify(props.data.state),
+      body: JSON.stringify(props.state),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -54,7 +54,7 @@ function Share(props) {
           <button type="submit" onClick={createCard}>
             crear tarjeta
           </button>
-          {/* <p>{showCard}</p> */}
+          <p>{showCard}</p>
         </form>
       </div>
       <ShareTwitter /*cardURL={result.cardURL}*/ />
