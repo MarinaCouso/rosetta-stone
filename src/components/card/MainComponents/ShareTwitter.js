@@ -7,25 +7,29 @@ function ShareTwitter(props) {
   function createCard() {
     getApiData();
   }
-  // const URL = props.showURL;
-  // function showURL(props.showURL) {
-  //  console.log('estoy en ello', URL);
-  // //  //   // debugger;
-  //    if (URL.success) {
-  //     showCard = `<a href='${URL}'></a>`;
-  //   } else {
-  //     showCard = 'ERROR:';
-  //   }
-  //  }
+  //   .then(function (resp) {
+  //       return resp.json();
+  //     })
+  //     .then(function (result) {
+  //       showURL(result);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }
+  function showURL(result) {
+    //   console.log('estoy en ello', result.cardURL);
+    //   // debugger;
+    if (result.success) {
+      showCard = `<a href='${result.cardURL}'></a>`;
+    } else {
+      showCard = 'ERROR:' + result.error;
+    }
+  }
 
   const getApiData = () => {
     ApiData(props.data).then((result) => {
-      if (result.success) {
-        showCard = `<a href='${result.cardURL}'></a>`;
-        // return ( const showCard = `<a href='${result.cardURL}'></a>`);
-      } else {
-        showCard = 'ERROR:' + result.error;
-      }
+      showURL(result);
     });
   };
 
