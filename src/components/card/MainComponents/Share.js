@@ -46,14 +46,13 @@ function Share(props) {
       showCard = 'ERROR:' + result.error;
     }
   }
-
+  const { name, job, linkedin, github, photo, palette, phone, email } = props.state;
   return (
-    // const { name, job, linkedin, github, photo } = props.state;
     <div>
       <div className="section-page__share collapsable-close">
         <SectionTitle icon="fas fa-share-alt" title="Comparte" /*onClick={handleValidationInput}*/ />
         <form className="section-page__share__form collapsable-content">
-          <button type="submit" onClick={createCard} className={`${props.state.palette === '' || props.state.name === '' || props.state.job === '' || props.state.linkedin === '' || props.state.github === '' || props.state.phone === '' || props.state.email === '' || props.state.photo === '' ? '' : 'validation__color'}`}>
+          <button type="submit" onClick={createCard} className={`${palette === '' || name === '' || job === '' || linkedin === '' || github === '' || phone === '' || email === '' || photo === '' ? '' : 'validation__color'}`}>
             crear tarjeta
           </button>
           <p>{showCard}</p>
