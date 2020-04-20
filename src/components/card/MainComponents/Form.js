@@ -3,21 +3,13 @@ import SectionTitle from './SectionTitle';
 import FormInput from './FormInput';
 import Image from './Image';
 
-// const handleInputData = (props) => {
-//   // if (ev.currentTarget.value !== undefined) {
-//   //   ev.currentTarget.innerHTML = ev.currentTarget.value;
-//   // }
-//   console.log(props);
-// };
-
 function Form(props) {
-  console.log(props);
   return (
     <div className="section-page__fill collapsable-close">
       <SectionTitle icon="far fa-keyboard" title="Rellena" />
       <form action="" method="GET" id="info-user" className="section-page__fill__form collapsable-content">
         <FormInput htmlFor="fullname" label="Nombre completo" className="input-name" type="text" name="name" id="fullname" placeholder="Ej: Sally Jill" handleInputData={props.handleInputData} value={props.state.name} />
-
+        {props.state.name ? '' : <p>Este campo es obligatorio</p>}
         <FormInput htmlFor="job" label="Puesto" className="js-input-job" type="text" name="job" id="job" placeholder="Ej: Front-end unicorn" handleInputData={props.handleInputData} value={props.state.job} />
 
         <Image handleInputImage={props.handleInputImage} state={props.state} />

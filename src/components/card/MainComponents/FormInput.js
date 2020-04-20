@@ -2,9 +2,6 @@ import React from 'react';
 
 function FormInput(props) {
   function handleInputForm(ev) {
-    // const inputDataLabel = ev.currentTarget.name;
-    // console.log(inputDataLabel);
-    // console.log('Me han cambiado', ev.currentTarget.name, ev.currentTarget.value);
     props.handleInputData({
       value: ev.currentTarget.value,
       name: ev.currentTarget.name,
