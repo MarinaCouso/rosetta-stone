@@ -173,7 +173,7 @@
       button {
         border: none;
         padding: 13px 18px;
-        // background-color: #e17334;
+        background-color: #e17334;
         border-radius: 12px;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
         color: white;
@@ -185,7 +185,6 @@
         cursor: pointer;
       }
       button:hover {
-        border-radius: 50%;
         box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
         transition-duration: 2s;
 
