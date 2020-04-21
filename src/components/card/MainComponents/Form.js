@@ -1,43 +1,36 @@
 import React from 'react';
 import SectionTitle from './SectionTitle';
 import FormInput from './FormInput';
+import Image from './Image';
+import PropTypes from 'prop-types';
 
-function Form() {
+function Form(props) {
   return (
-    <div className="section-page__fill  {/*  collapsable-close*/}">
+    <div className="section-page__fill collapsable-close">
       <SectionTitle icon="far fa-keyboard" title="Rellena" />
       <form action="" method="GET" id="info-user" className="section-page__fill__form collapsable-content">
-        <FormInput htmlFor="fullname" value="Nombre completo" className="input-name" type="text" name="fullname" id="fullname" placeholder="Ej: Sally Jill" />
+        <FormInput htmlFor="fullname" label="Nombre completo" className="input-name" type="text" name="name" id="fullname" placeholder="Ej: Sally Jill" handleInputData={props.handleInputData} value={props.state.name} />
 
-        <FormInput htmlFor="job" value="Puesto" className="js-input-job" type="text" name="job" id="job" placeholder="Ej: Front-end unicorn" />
+        <FormInput htmlFor="job" label="Puesto" className="js-input-job" type="text" name="job" id="job" placeholder="Ej: Front-end unicorn" handleInputData={props.handleInputData} value={props.state.job} />
 
-        <label htmlFor="img" className="label-img">
-          Imagen de perfil
-        </label>
-        <div className="img-container">
-          <button type="button" className="btn-add js-btn-img">
-            Añadir imagen
-          </button>
-          <input
-            type="file"
-            name=""
-            id="img-selector"
-            className="hiddenField js__profile-upload-btn"
-            // onChange={handleInputData}
-          />
-          <div className="img-user js-preview"></div>
-        </div>
+        <Image handleInputImage={props.handleInputImage} state={props.state} />
 
-        <FormInput htmlFor="email" value="Email" className="js-input-mail" type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com" />
+        <FormInput htmlFor="email" label="Email" className="js-input-mail" type="email" name="email" id="email" placeholder="Ej: sally-hill@gmail.com" href="" handleInputData={props.handleInputData} value={props.state.email} />
 
-        <FormInput htmlFor="phone" value="Teléfono" className="js-input-phone" type="tel" name="phone" id="phone" placeholder="Ej: 555-55-55-55" />
+        <FormInput htmlFor="phone" label="Teléfono" className="js-input-phone" type="tel" name="phone" id="phone" placeholder="Ej: 555-55-55-55" handleInputData={props.handleInputData} value={props.state.phone} />
 
-        <FormInput htmlFor="linkendin" value="Linkendin" className="js-input-linkedin" type="text" name="linkendin" id="linkendin" placeholder="Ej: linkendin.com/in/sally.hill@gmail.com" />
+        <FormInput htmlFor="linkedin" label="Linkedin" className="js-input-linkedin" type="text" name="linkedin" id="linkedin" placeholder="Ej: linkedin.com/in/sally.hill@gmail.com" href="" handleInputData={props.handleInputData} value={props.state.linkedin} />
 
-        <FormInput htmlFor="github" value="Github" className="js-input-github" type="text" name="github" id="github" placeholder="Ej: @sally-hill" />
+        <FormInput htmlFor="github" label="Github" className="js-input-github" type="text" name="github" id="github" placeholder="Ej: @sally-hill" href="" handleInputData={props.handleInputData} value={props.state.github} />
       </form>
     </div>
   );
 }
+
+Form.propTypes = {
+  state: PropTypes.object.isRequired,
+  handleInputData: PropTypes.func.isRequired,
+  handleInputImage: PropTypes.func.isRequired,
+};
 
 export default Form;

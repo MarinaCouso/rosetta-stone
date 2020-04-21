@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function PaletteComponent(props) {
   function handleChange(ev) {
@@ -8,7 +9,7 @@ function PaletteComponent(props) {
       value: ev.currentTarget.value,
     });
   }
-  console.log(props);
+  // console.log(props);
   return (
     <label htmlFor={props.id} className={props.aClass}>
       <input
@@ -28,5 +29,14 @@ function PaletteComponent(props) {
     </label>
   );
 }
+
+PaletteComponent.propTypes = {
+  id: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  currentValue: PropTypes.string.isRequired,
+  aClass: PropTypes.string.isRequired,
+  classList: PropTypes.string.isRequired,
+  handlePalette: PropTypes.func.isRequired,
+};
 
 export default PaletteComponent;
