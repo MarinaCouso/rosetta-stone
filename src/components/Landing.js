@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Card from './Card';
 import Footer from '../components/card/Footer';
 import mainLogo from '../images/awesome-profile-cards-logo.svg';
 
@@ -10,7 +9,9 @@ function Landing() {
       <div className='index-main'>
         <img className='index-main__image' src={mainLogo} alt='logo' />
         <h1 className='index-main__title'>Crea tu tarjeta de visita</h1>
-        <p className='index-main__content'>Crea mejores contactos profesionales de forma fácil y cómoda</p>
+        <p className='index-main__content'>
+          Crea mejores contactos profesionales de forma fácil y cómoda
+        </p>
         <div className='index-main__table'>
           <ul className='index-main__list'>
             <li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ShareTwitter from './ShareTwitter';
 import SectionTitle from './SectionTitle';
+import PropTypes from 'prop-types';
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -23,5 +24,10 @@ function Share(props) {
     </div>
   );
 }
+
+Share.defaultProps = {
+  state: PropTypes.object.isRequired,
+  getApiData: PropTypes.func.isRequired,
+};
 
 export default Share;

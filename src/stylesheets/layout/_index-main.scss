@@ -60,6 +60,7 @@
     font-family: $specialFont;
   }
   &__content {
+    padding: 20px;
     color: $textCard;
     font-size: 12.8px;
     font-family: $textFont;
@@ -113,6 +114,7 @@
 .fa-keyboard,
 .fa-share-alt {
   color: $orange;
+  padding-right: 10px;
 }
 
 // TABLET STYLES

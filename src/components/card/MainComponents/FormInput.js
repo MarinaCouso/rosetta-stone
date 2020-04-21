@@ -12,6 +12,7 @@ function FormInput(props) {
     <div>
       <label htmlFor={props.htmlFor}>{props.label}</label>
       <input className={props.className} type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} onChange={handleInputForm} href={props.href} value={props.value} required />
+      <small className="input__fieldRequest">*Campo requerido</small>
     </div>
   );
 }

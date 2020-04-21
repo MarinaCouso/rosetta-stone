@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   &__title {
-    @include titleSectionDesign();
     padding: 10px 0;
     color: $textColor;
     text-transform: uppercase;
+    @include titleSectionDesign();
   }
 
   &__btn {
