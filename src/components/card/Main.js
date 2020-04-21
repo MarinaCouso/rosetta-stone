@@ -3,6 +3,7 @@ import Form from './MainComponents/Form';
 import Design from './MainComponents/Design';
 import Share from './MainComponents/Share';
 import PreviewCard from './MainComponents/PreviewCard';
+import { ApiData } from '../../services/ApiData';
 
 class Main extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Main extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      URL: '',
     };
     this.handlePaletteMain = this.handlePaletteMain.bind(this);
     this.handleInputData = this.handleInputData.bind(this);
@@ -23,13 +25,13 @@ class Main extends React.Component {
     this.handleResetButton = this.handleResetButton.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.componentDidUpdate = this.componentDidUpdate.bind(this);
+    this.getApiData = this.getApiData.bind(this);
   }
 
   componentDidMount() {
     const userInfo = JSON.parse(localStorage.getItem('userData'));
     if (userInfo !== null) {
       this.setState(userInfo);
-      // console.log(userInfo);
     }
   }
 
@@ -62,11 +64,22 @@ class Main extends React.Component {
       phone: '',
       linkedin: '',
       github: '',
+      URL: '',
+    });
+  }
+
+  getApiData(event) {
+    let showCard;
+    event.preventDefault();
+    return ApiData(this.state).then((result) => {
+      showCard = result.success ? result.cardURL : 'ERROR:' + result.error;
+      this.setState({
+        URL: showCard,
+      });
     });
   }
 
   render() {
-    // console.log(this.state);
     return (
       <main className='section-profile'>
         <PreviewCard
@@ -84,7 +97,7 @@ class Main extends React.Component {
             state={this.state}
             handleInputImage={this.handleInputImage}
           />
-          <Share />
+          <Share state={this.state} getApiData={this.getApiData} />
         </section>
       </main>
     );

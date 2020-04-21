@@ -24,6 +24,7 @@ class Image extends React.Component {
       value: profileImage,
       id: 'photo',
     });
+    this.fileInput.value = '';
   }
   fakeFileClick(e) {
     e.preventDefault();

@@ -4,15 +4,7 @@ import FormInput from './FormInput';
 import Image from './Image';
 import PropTypes from 'prop-types';
 
-// const handleInputData = (props) => {
-//   // if (ev.currentTarget.value !== undefined) {
-//   //   ev.currentTarget.innerHTML = ev.currentTarget.value;
-//   // }
-//   console.log(props);
-// };
-
 function Form(props) {
-  // console.log(props);
   return (
     <div className='section-page__fill collapsable-close'>
       <SectionTitle icon='far fa-keyboard' title='Rellena' />
@@ -30,10 +22,10 @@ function Form(props) {
           name='name'
           id='fullname'
           placeholder='Ej: Sally Jill'
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.name}
         />
-
+        {props.state.name ? '' : <p>Este campo es obligatorio</p>}
         <FormInput
           htmlFor='job'
           label='Puesto'
@@ -42,7 +34,7 @@ function Form(props) {
           name='job'
           id='job'
           placeholder='Ej: Front-end unicorn'
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.job}
         />
 
@@ -57,7 +49,7 @@ function Form(props) {
           id='email'
           placeholder='Ej: sally-hill@gmail.com'
           href=''
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.email}
         />
 
@@ -69,7 +61,7 @@ function Form(props) {
           name='phone'
           id='phone'
           placeholder='Ej: 555-55-55-55'
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.phone}
         />
 
@@ -82,7 +74,7 @@ function Form(props) {
           id='linkedin'
           placeholder='Ej: linkedin.com/in/sally.hill@gmail.com'
           href=''
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.linkedin}
         />
 
@@ -95,7 +87,7 @@ function Form(props) {
           id='github'
           placeholder='Ej: @sally-hill'
           href=''
-          handleInputForm={props.handleInputData}
+          handleInputData={props.handleInputData}
           value={props.state.github}
         />
       </form>

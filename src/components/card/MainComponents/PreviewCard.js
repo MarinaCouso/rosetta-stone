@@ -4,8 +4,6 @@ import PreviewCardIcons from './PreviewCardIcons';
 import PropTypes from 'prop-types';
 
 function PreviewCard(props) {
-  // console.log(props);
-
   const handleResetButton = () => {
     props.handleResetButton();
   };
