@@ -5,7 +5,7 @@ function ShareTwitter(props) {
   const urlTwitter = 'Tarjeta creada por Rosseta Stone';
   const hastagTwitter = 'Adalab';
   return (
-    <div className="section-page__card-create collapsable-content">
+    <div className={`${props.cardURL ? 'section-page__card-create collapsable-content' : 'section-page__card-create collapsable-content hidden'}`}>
       <h3 className="section-page__card-create__title">La tarjeta ha sido creada</h3>
 
       <button type="submit" className="section-page__card-create__rrss-btn">
