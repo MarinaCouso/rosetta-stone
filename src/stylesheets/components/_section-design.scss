@@ -173,7 +173,7 @@
       button {
         border: none;
         padding: 13px 18px;
-        background-color: #e17334;
+        // background-color: #e17334;
         border-radius: 12px;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
         color: white;
@@ -201,7 +201,7 @@
     text-align: center;
     border-bottom: 1px solid #d8d8d8;
     padding-bottom: 20px;
-    display: none;
+    // display: none;
     &__title {
       padding-top: 20px;
       @include titleSectionDesign();
@@ -232,4 +232,8 @@
 
 .fa-smile-wink {
   color: #e17334;
+}
+
+.validation__color {
+  background-color: #e17334;
 }

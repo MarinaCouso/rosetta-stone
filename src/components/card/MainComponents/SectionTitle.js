@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SectionTitle extends React.Component {
   collapsable(e) {
@@ -15,17 +16,28 @@ class SectionTitle extends React.Component {
   }
   render() {
     return (
-      <header onClick={this.collapsable} className='section-page__header collapsable-header'>
+      <header
+        onClick={this.collapsable}
+        className='section-page__header collapsable-header'
+      >
         <h2 className='section-page__header__title'>
           <i className={this.props.icon} style={{ color: '#e17334' }}></i>
           {this.props.title}
         </h2>
-        <button type='button' className='section-page__header__btn collapsable-btn'>
+        <button
+          type='button'
+          className='section-page__header__btn collapsable-btn'
+        >
           <i className='fas fa-chevron-down'></i>
         </button>
       </header>
     );
   }
 }
+
+SectionTitle.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default SectionTitle;
