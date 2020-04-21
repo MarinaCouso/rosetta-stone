@@ -97,11 +97,7 @@ class Main extends React.Component {
             state={this.state}
             handleInputImage={this.handleInputImage}
           />
-          <Share
-            state={this.state}
-            handleValidation={this.handleValidation}
-            getApiData={this.getApiData}
-          />
+          <Share state={this.state} getApiData={this.getApiData} />
         </section>
       </main>
     );

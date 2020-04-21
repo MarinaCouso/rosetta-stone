@@ -1,6 +1,7 @@
 import React from 'react';
 import ShareTwitter from './ShareTwitter';
 import SectionTitle from './SectionTitle';
+import PropTypes from 'prop-types';
 
 function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -8,7 +9,6 @@ function validateEmail(email) {
 }
 
 function Share(props) {
-  console.log(props);
   const { name, job, linkedin, github, photo, palette, phone, email, URL } = props.state;
   return (
     <div>
@@ -19,10 +19,15 @@ function Share(props) {
             crear tarjeta
           </button>
         </form>
+        <ShareTwitter cardURL={URL} />
       </div>
-      <ShareTwitter cardURL={URL} />
     </div>
   );
 }
+
+Share.defaultProps = {
+  state: PropTypes.object.isRequired,
+  getApiData: PropTypes.func.isRequired,
+};
 
 export default Share;

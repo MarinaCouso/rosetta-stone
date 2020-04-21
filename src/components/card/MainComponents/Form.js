@@ -2,6 +2,7 @@ import React from 'react';
 import SectionTitle from './SectionTitle';
 import FormInput from './FormInput';
 import Image from './Image';
+import PropTypes from 'prop-types';
 
 function Form(props) {
   return (
@@ -25,5 +26,11 @@ function Form(props) {
     </div>
   );
 }
+
+Form.propTypes = {
+  state: PropTypes.object.isRequired,
+  handleInputData: PropTypes.func.isRequired,
+  handleInputImage: PropTypes.func.isRequired,
+};
 
 export default Form;
