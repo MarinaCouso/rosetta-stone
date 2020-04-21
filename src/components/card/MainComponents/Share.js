@@ -8,38 +8,14 @@ function validateEmail(email) {
 }
 
 function Share(props) {
-  const {
-    name,
-    job,
-    linkedin,
-    github,
-    photo,
-    palette,
-    phone,
-    email,
-    URL,
-  } = props.state;
+  console.log(props);
+  const { name, job, linkedin, github, photo, palette, phone, email, URL } = props.state;
   return (
     <div>
-      <div className='section-page__share collapsable-close'>
-        <SectionTitle icon='fas fa-share-alt' title='Comparte' />
-        <form className='section-page__share__form collapsable-content'>
-          <button
-            type='submit'
-            onClick={props.getApiData}
-            disabled={
-              palette === '' ||
-              name === '' ||
-              job === '' ||
-              linkedin === '' ||
-              github === '' ||
-              phone === '' ||
-              validateEmail(email) === false ||
-              photo === ''
-                ? true
-                : false
-            }
-          >
+      <div className="section-page__share collapsable-close">
+        <SectionTitle icon="fas fa-share-alt" title="Comparte" />
+        <form className="section-page__share__form collapsable-content">
+          <button type="submit" onClick={props.getApiData} disabled={palette === '' || name === '' || job === '' || linkedin === '' || github === '' || phone === '' || validateEmail(email) === false || photo === '' ? true : false}>
             crear tarjeta
           </button>
         </form>
