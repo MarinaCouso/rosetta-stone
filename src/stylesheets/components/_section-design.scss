@@ -173,7 +173,7 @@
       button {
         border: none;
         padding: 13px 18px;
-        // background-color: #e17334;
+        background-color: #e17334;
         border-radius: 12px;
         box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
         color: white;
@@ -184,8 +184,10 @@
         text-transform: uppercase;
         cursor: pointer;
       }
+      button:disabled {
+        background-color: rgb(199, 199, 199);
+      }
       button:hover {
-        border-radius: 50%;
         box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.75);
         transition-duration: 2s;
 
@@ -238,6 +240,20 @@
   color: #e17334;
 }
 
-.validation__color {
-  background-color: #e17334;
+.input__fieldRequest {
+  color: red;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+}
+.hidden {
+  display: none;
+}
+.url {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  color: #e17334;
+  font-weight: bold;
+  margin: 5px;
+  text-decoration: none;
 }
