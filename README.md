@@ -63,11 +63,11 @@ Genera un commit con título "Update docs" y hace el push del commit.
 
 ## Equipo de desarrollo :fountain_pen:
 
-Belén Catalán - [BelenCatalan](https://github.com/BelenCatalan) :octocat:
-Marina Couso - [MarinaCouso](https://github.com/MarinaCouso)[smgaragorri] :octocat:
-Marta Montoro [Martamp](https://github.com/Martamp) :octocat:
-Patricia Martínez - [includepatriciamartinez](https://github.com/includepatriciamartinez) :octocat:
-Sara Martín Garagorri - [smgaragorri](https://github.com/smgaragorri) :octocat:
+1. Belén Catalán - [BelenCatalan](https://github.com/BelenCatalan) :octocat:
+2. Marina Couso - [MarinaCouso](https://github.com/MarinaCouso):octocat:
+3. Marta Montoro [Martamp](https://github.com/Martamp) :octocat:
+4. Patricia Martínez - [includepatriciamartinez](https://github.com/includepatriciamartinez) :octocat:
+5. Sara Martín Garagorri - [smgaragorri](https://github.com/smgaragorri) :octocat:
 
 ---
 
