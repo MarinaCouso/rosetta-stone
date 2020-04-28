@@ -1,10 +1,9 @@
 // DISTRIBUTION
 
 .index-main {
-  height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   &__image {
@@ -26,7 +25,8 @@
     padding-bottom: 10px;
   }
   &__button {
-    margin-top: 9%;
+    margin-top: 5%;
+    margin-bottom: 80px;
   }
 }
 
@@ -34,9 +34,8 @@
 
 @media all and (min-width: 768px) {
   .index-main {
-    height: 100vh;
     &__image {
-      padding-top: 13%;
+      // padding-top: 13%;
       width: 419px;
     }
     &__title {
@@ -53,6 +52,9 @@
 
 // STYLES
 .index-main {
+  // padding-top: 120px;
+  padding-top: 110px;
+  justify-content: flex-end;
   background-color: $backgroundColor1;
   &__title {
     color: $orange;
@@ -140,3 +142,8 @@
 // .index-main__table {
 //   border: solid 2px #fabada;
 // }
+@media all and (max-width: 768px) {
+  .index-main {
+    padding-top: 180px;
+  }
+}
